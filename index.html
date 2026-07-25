@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coca-Cola | 360° Scroll Experience by M.Furqan Projects</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "coke-red": "#F40009",
+            "carbon-black": "#1A1A1A",
+            "silver-lining": "#F2F2F2",
+            "pure-white": "#FFFFFF",
+            "background": "#fff8f7",
+            "surface": "#fff8f7",
+            "on-surface": "#2a1613",
+            "on-surface-variant": "#5f3e3a",
+            "primary": "#bc0005"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "24px",
+            "container-max": "1440px",
+            "margin-mobile": "16px",
+            "margin-desktop": "64px"
+          },
+          fontFamily: {
+            "hanken": ["Hanken Grotesk", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+  <script type="module" crossorigin src="./assets/index-OtUgSR6z.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DiIh8xsa.css">
+</head>
+<body class="bg-background text-on-surface font-hanken overflow-x-hidden selection:bg-coke-red selection:text-white">
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="brand-text">Coca-Cola</div>
+      <div class="loader-spinner"></div>
+      <div id="progress-text" class="progress-text">Loading 360° Animation... 0%</div>
+    </div>
+  </div>
+
+  <!-- FIXED TOP NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-silver-lining/80 shadow-sm">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+      <div class="font-extrabold text-2xl text-coke-red uppercase tracking-tighter flex items-center gap-2">
+        Coca-Cola
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-coke-red font-bold border-b-2 border-coke-red pb-1 text-xs tracking-wider uppercase font-mono" href="#timeline">Our Journey</a>
+        <a class="text-gray-600 hover:text-carbon-black transition-colors text-xs tracking-wider uppercase font-mono" href="#sustainability">Sustainability</a>
+        <a class="text-gray-600 hover:text-carbon-black transition-colors text-xs tracking-wider uppercase font-mono" href="#creations">Innovation</a>
+        <a class="text-gray-600 hover:text-carbon-black transition-colors text-xs tracking-wider uppercase font-mono" href="#vision">Our Vision</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="material-symbols-outlined p-2 hover:bg-silver-lining/50 rounded-lg transition-all" data-icon="language">language</button>
+        <button class="bg-coke-red text-white px-6 py-2 rounded-lg text-xs font-mono tracking-wider hover:bg-red-700 transition-all active:scale-95">Contact Us</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FIXED FULLSCREEN 360° CANVAS -->
+  <div class="canvas-fixed-viewport">
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- FADING HEADING OVERLAY -->
+    <div id="anim-overlay-header" class="anim-overlay-header">
+      <span class="pill-tag">360° INTERACTIVE SHOWCASE</span>
+      <h1 class="anim-title">M.FURQAN PROJECTS</h1>
+      <p class="anim-subtitle">Scroll down to rotate bottle 360°</p>
+      <div class="arrow-bounce mt-3">↓</div>
+    </div>
+  </div>
+
+  <!-- SCROLL TRACK FOR 360° ANIMATION -->
+  <div id="anim-scroll-track" class="anim-scroll-track"></div>
+
+  <!-- CONTENT SECTION (Appears smoothly below the 360° scroll animation) -->
+  <div id="content-section" class="content-section">
+
+    <!-- THE TIMELINE MAIN CONTENT -->
+    <main id="timeline" class="relative py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <!-- Vertical Timeline Line -->
+      <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-red-200/80 hidden md:block"></div>
+
+      <!-- 1886: The Origin -->
+      <section class="reveal relative grid md:grid-cols-2 gap-gutter mb-32 items-center">
+        <div class="md:text-right md:pr-12">
+          <div class="font-mono text-xs font-bold text-coke-red mb-2 tracking-wider">1886 — THE GENESIS</div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 text-carbon-black">Born in Atlanta</h2>
+          <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+            Dr. John S. Pemberton creates the first Coca-Cola syrup at Jacob's Pharmacy. A modest start for a flavor that would eventually bridge cultures across continents.
+          </p>
+        </div>
+        <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-coke-red rounded-full border-4 border-white shadow-lg"></div>
+        <div class="md:pl-12">
+          <div class="glass-card p-6 rounded-2xl bg-white border border-silver-lining shadow-xl hover:scale-[1.02] transition-transform">
+            <div class="rounded-xl overflow-hidden aspect-video bg-surface shadow-inner">
+              <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=800&q=80')"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1915: The Icon -->
+      <section class="reveal relative grid md:grid-cols-2 gap-gutter mb-32 items-center">
+        <div class="order-2 md:order-1 md:pr-12">
+          <div class="glass-card p-6 rounded-2xl bg-white border border-silver-lining shadow-xl hover:scale-[1.02] transition-transform">
+            <div class="rounded-xl overflow-hidden aspect-[4/3] bg-surface shadow-inner">
+              <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=80')"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-coke-red rounded-full border-4 border-white shadow-lg"></div>
+        <div class="order-1 md:order-2 md:pl-12">
+          <div class="font-mono text-xs font-bold text-coke-red mb-2 tracking-wider">1915 — THE CONTOUR</div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 text-carbon-black">A Shape Like No Other</h2>
+          <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+            The Root Glass Company creates the "Contour Bottle," designed to be recognized even in the dark or broken on the ground. Identity becomes art.
+          </p>
+        </div>
+      </section>
+
+      <!-- 1971: The Message -->
+      <section class="reveal relative grid md:grid-cols-2 gap-gutter mb-32 items-center">
+        <div class="md:text-right md:pr-12">
+          <div class="font-mono text-xs font-bold text-coke-red mb-2 tracking-wider">1971 — GLOBAL HARMONY</div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 text-carbon-black">I'd Like to Buy the World a Coke</h2>
+          <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">
+            The legendary Hilltop commercial cements the brand's role as a symbol of unity and peace during turbulent times. Coca-Cola becomes more than a drink; it's a message.
+          </p>
+        </div>
+        <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-coke-red rounded-full border-4 border-white shadow-lg"></div>
+        <div class="md:pl-12">
+          <div class="glass-card p-6 rounded-2xl bg-white border border-silver-lining shadow-xl hover:scale-[1.02] transition-transform">
+            <div class="rounded-xl overflow-hidden aspect-video bg-surface shadow-inner">
+              <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80')"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRESENT: Coca-Cola Creations -->
+      <section id="creations" class="reveal relative mb-32">
+        <div class="p-8 md:p-16 rounded-3xl bg-white border border-silver-lining shadow-2xl">
+          <div class="grid md:grid-cols-5 gap-12 items-center">
+            <div class="md:col-span-2">
+              <div class="font-mono text-xs font-bold text-coke-red mb-3 tracking-wider">PRESENT — DIGITAL FRONTIER</div>
+              <h2 class="text-3xl md:text-4xl font-bold mb-6 text-carbon-black">Coca-Cola Creations</h2>
+              <p class="text-on-surface-variant mb-8 leading-relaxed">
+                Exploring the intersection of the physical and digital. From AI-powered flavors to collaborations with global music icons, we're co-creating the future with our fans.
+              </p>
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4 p-4 bg-red-50/80 rounded-xl border border-red-100 shadow-sm">
+                  <span class="material-symbols-outlined text-coke-red">psychology</span>
+                  <span class="font-mono text-xs font-semibold text-carbon-black">AI-Driven Taste Exploration</span>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-red-50/80 rounded-xl border border-red-100 shadow-sm">
+                  <span class="material-symbols-outlined text-coke-red">token</span>
+                  <span class="font-mono text-xs font-semibold text-carbon-black">Virtual Flavor Drops (Y3000)</span>
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-3">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl h-[360px] bg-gradient-to-tr from-red-900 via-coke-red to-black flex items-center justify-center p-8 text-center text-white">
+                <div class="bg-black/40 p-8 rounded-2xl border border-white/20 backdrop-blur-md max-w-md">
+                  <span class="font-mono text-xs text-red-300 tracking-widest uppercase mb-2 block">Next Gen Refreshment</span>
+                  <h3 class="text-2xl font-bold mb-3 tracking-wide">The Metaverse is Refreshing</h3>
+                  <p class="text-sm text-white/80 font-mono">Experience Y3000 — The first flavor co-created with artificial intelligence.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STRATEGY: Total Beverage Company -->
+      <section id="vision" class="reveal mb-32">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="font-mono text-xs font-bold text-coke-red mb-2 uppercase tracking-wider">Our Vision</div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 text-carbon-black">A Total Beverage Company</h2>
+          <p class="text-on-surface-variant text-base md:text-lg">
+            We are expanding our portfolio to offer more choices across more categories than ever before—refreshing people with what they want, whenever they want it.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <!-- Category 1 -->
+          <div id="sustainability" class="group bg-white p-8 rounded-2xl border border-silver-lining hover:border-coke-red transition-all hover:shadow-2xl">
+            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6 text-coke-red group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined">water_drop</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-carbon-black">Hydration</h3>
+            <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Smartwater, Vitaminwater, and AHA are redefining what it means to stay hydrated with purpose.
+            </p>
+            <div class="w-full h-1.5 bg-silver-lining rounded-full overflow-hidden">
+              <div class="bg-coke-red h-full w-3/4"></div>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="group bg-white p-8 rounded-2xl border border-silver-lining hover:border-coke-red transition-all hover:shadow-2xl">
+            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6 text-coke-red group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined">nutrition</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-carbon-black">Nutrition</h3>
+            <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+              From Fairlife ultra-filtered milk to plant-based juices, we nourish every body and every lifestyle.
+            </p>
+            <div class="w-full h-1.5 bg-silver-lining rounded-full overflow-hidden">
+              <div class="bg-coke-red h-full w-1/2"></div>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="group bg-white p-8 rounded-2xl border border-silver-lining hover:border-coke-red transition-all hover:shadow-2xl">
+            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6 text-coke-red group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined">eco</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-carbon-black">Sustainability</h3>
+            <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Our World Without Waste initiative aims to recycle every bottle we sell by 2030.
+            </p>
+            <div class="w-full h-1.5 bg-silver-lining rounded-full overflow-hidden">
+              <div class="bg-coke-red h-full w-full"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MISSION SPLASH -->
+    <section class="bg-carbon-black py-24 relative overflow-hidden text-white">
+      <div class="relative z-10 text-center px-margin-mobile max-w-4xl mx-auto">
+        <h2 class="font-extrabold text-3xl md:text-5xl text-white mb-8">Refreshing the World</h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Making a difference in people's lives, communities, and our planet through everything we do.
+        </p>
+        <button class="bg-coke-red text-white px-12 py-5 rounded-xl font-bold hover:scale-105 hover:bg-red-600 transition-transform shadow-xl">
+          Explore Sustainability Report
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-carbon-black border-t border-white/10 text-white">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+        <div class="col-span-1 md:col-span-1">
+          <div class="font-extrabold text-3xl text-coke-red mb-4 uppercase tracking-tighter">Coca-Cola</div>
+          <p class="text-gray-400 text-sm leading-relaxed">Refreshing the world and making a difference since 1886.</p>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-white uppercase mb-6 tracking-widest font-bold">Our Company</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li><a class="hover:text-white hover:underline decoration-coke-red transition-all" href="#">Careers</a></li>
+            <li><a class="hover:text-white hover:underline decoration-coke-red transition-all" href="#">Investor Relations</a></li>
+            <li><a class="hover:text-white hover:underline decoration-coke-red transition-all" href="#">Governance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-white uppercase mb-6 tracking-widest font-bold">Resources</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li><a class="hover:text-white hover:underline decoration-coke-red transition-all" href="#">Media Center</a></li>
+            <li><a class="hover:text-white hover:underline decoration-coke-red transition-all" href="#">History</a></li>
+            <li><a class="hover:text-white hover:underline decoration-coke-red transition-all" href="#">Brand Assets</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-white uppercase mb-6 tracking-widest font-bold">Contact</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-coke-red">mail</span>
+              <a href="mailto:furqanlimited2@gmail.com" class="hover:text-white transition-colors">furqanlimited2@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-coke-red">call</span>
+              <span>+1 800-438-2653</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="px-margin-mobile md:px-margin-desktop py-8 border-t border-white/5 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-gray-400 text-xs font-mono">
+        <p>© Coca-Cola made by M.Furqan. All rights reserved.</p>
+        <div class="flex gap-8">
+          <a class="hover:text-white" href="#">Privacy Policy</a>
+          <a class="hover:text-white" href="#">Terms of Business</a>
+          <a class="hover:text-white" href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
