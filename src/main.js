@@ -1,4 +1,4 @@
-/* COCA-COLA 360° SCROLL ANIMATION ENGINE WITH HEADING FADE */
+/* COCA-COLA 360° SCROLL ANIMATION ENGINE WITH RELATIVE ASSET RESOLUTION */
 
 const TOTAL_FRAMES = 150;
 const frameImages = [];
@@ -12,12 +12,12 @@ const canvas = document.getElementById('hero-canvas');
 const ctx = canvas.getContext('2d');
 const preloader = document.getElementById('preloader');
 const progressText = document.getElementById('progress-text');
-const headerOverlay = document.getElementById('anim-overlay-header');
 
-// 1. FRAME PRELOADER
+// 1. FRAME PRELOADER WITH RELATIVE PATH SUPPORT FOR GITHUB PAGES
 function getFramePath(index) {
   const numStr = String(index + 1).padStart(3, '0');
-  return `/frames/ezgif-frame-${numStr}.jpg`;
+  // Use relative path ./frames/... so subpaths on GitHub Pages resolve frames correctly
+  return `./frames/ezgif-frame-${numStr}.jpg`;
 }
 
 function preloadFrames() {
