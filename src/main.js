@@ -23,7 +23,8 @@ function getFramePath(index) {
 function preloadFrames() {
   for (let i = 0; i < TOTAL_FRAMES; i++) {
     const img = new Image();
-    img.src = getFramePath(i);
+    frameImages.push(img); // Push first to avoid race condition where frameImages[0] is undefined
+
     img.onload = () => {
       loadedCount++;
       const percent = Math.floor((loadedCount / TOTAL_FRAMES) * 100);
@@ -40,11 +41,12 @@ function preloadFrames() {
         onPreloadComplete();
       }
     };
-    img.onerror = () => {
+    img.onerror = (err) => {
+      console.error(`Failed to load frame ${i + 1} from path: ${getFramePath(i)}`, err);
       loadedCount++;
       if (loadedCount === TOTAL_FRAMES) onPreloadComplete();
     };
-    frameImages.push(img);
+    img.src = getFramePath(i); // Assign src last to trigger download safely
   }
 }
 

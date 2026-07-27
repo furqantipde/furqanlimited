@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-  base: './',
-  build: {
-    outDir: 'dist'
-  }
+export default defineConfig(({ command }) => {
+  return {
+    base: command === 'serve' ? '/' : './',
+    build: {
+      outDir: 'dist'
+    }
+  };
 });
